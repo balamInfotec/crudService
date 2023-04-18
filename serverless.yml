@@ -7,6 +7,10 @@ provider:
   profile: 'lambda-dev-recluta'
   region: 'us-east-1'
 
+plugins:
+  - serverless-offline
+
+
 functions:
   servicioGet:
     handler: handlerGet.servicioGet
@@ -14,3 +18,9 @@ functions:
       - httpApi:
           path: /message/{message}
           method: get
+  servicioPost:
+    handler: handlerPost.servicioPost
+    events:
+      - httpApi:
+          path: /message/
+          method: post
