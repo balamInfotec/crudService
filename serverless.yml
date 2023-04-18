@@ -19,8 +19,8 @@ functions:
           path: /message/{message}
           method: get
   servicioPost:
-    handler: handlerPost.servicioPost
+    handler: handlerPost.servicioPOST
     events:
       - httpApi:
-          path: /message/
+          path: /message
           method: post
