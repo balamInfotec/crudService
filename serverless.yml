@@ -1,0 +1,16 @@
+service: crud-service
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+  profile: 'lambda-dev-recluta'
+  region: 'us-east-1'
+
+functions:
+  servicioGet:
+    handler: handlerGet.servicioGet
+    events:
+      - httpApi:
+          path: /message/{message}
+          method: get
